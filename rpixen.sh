@@ -24,7 +24,8 @@ UBUNTUVERSION="20.04.3"
 
 BUILD_ARCH=${1:-arm64}
 
-sudo apt install device-tree-compiler tftpd-hpa flex bison qemu-utils kpartx git curl qemu-user-static binfmt-support parted bc libncurses5-dev libssl-dev pkg-config python acpica-tools wget gettext
+# Jan Algermissen moved this to cloud builder image dockerfile
+#sudo apt install device-tree-compiler tftpd-hpa flex bison qemu-utils kpartx git curl qemu-user-static binfmt-support parted bc libncurses5-dev libssl-dev pkg-config python acpica-tools wget gettext
 
 source ${SCRIPTDIR}toolchain-aarch64-linux-gnu.sh
 
