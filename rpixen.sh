@@ -15,6 +15,9 @@ trap 'fail_handler ${LINENO}' ERR
 git config --global user.email "jan.algermissen@tc1.io"
 git config --global user.name "Jan Algermissen"
 
+export USER=cloudbuild
+mkdir -p /media/${USER}
+
 WRKDIR=$(pwd)/
 SCRIPTDIR=$(cd $(dirname $0) && pwd)/
 
