@@ -51,7 +51,7 @@ finish () {
   sudo sync
   unmountstuff
   sudo tar -czf ${IMGFILE} -C ${MNTROOTFS} $(ls ${MNTROOTFS}) || true
-  sudo chown $USER:$USER ${IMGFILE} || true
+  #sudo chown $USER:$USER ${IMGFILE} || true
   sudo rm -rf ${MNTROOTFS} || true
   mv ${IMGFILE} . || true
   sudo umount ${MNTRAMDISK} || true

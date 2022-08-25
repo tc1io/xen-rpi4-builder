@@ -15,8 +15,7 @@ trap 'fail_handler ${LINENO}' ERR
 git config --global user.email "jan.algermissen@tc1.io"
 git config --global user.name "Jan Algermissen"
 
-export USER=cloudbuild
-mkdir -p /media/${USER}
+mkdir -p /media
 
 WRKDIR=$(pwd)/
 SCRIPTDIR=$(cd $(dirname $0) && pwd)/
@@ -175,8 +174,8 @@ elif [ "${BUILD_ARCH}" == "armhf" ]; then
     dd if=${WRKDIR}linux/.build-arm32/arch/arm/boot/zImage of=bootfiles/kernel8.img bs=1024 seek=2048 conv=notrunc
 fi
 
-if [ -d /media/${USER}/boot/ ]; then
-    cp -r bootfiles/* /media/${USER}/boot/
+if [ -d /media/boot/ ]; then
+    cp -r bootfiles/* /media/boot/
     sync
 fi
 
